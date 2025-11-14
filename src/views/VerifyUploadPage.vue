@@ -1,13 +1,13 @@
 <template>
   <div class="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
     <!-- Navbar Component -->
-    <Navbar app-name="DocuChain Verify">
+    <Navbar app-name="BlokBlok Verify">
       <template #nav-links>
         <button
           @click="$router.push('/verify-qr')"
           class="text-sm text-gray-600 hover:text-gray-900"
         >
-          Verifikasi dengan QR
+
         </button>
       </template>
     </Navbar>

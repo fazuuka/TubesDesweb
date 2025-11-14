@@ -219,7 +219,6 @@ const router = useRouter()
 
 // State
 const userData = ref({
-  name: 'Admin User',
   email: 'admin@example.com'
 })
 

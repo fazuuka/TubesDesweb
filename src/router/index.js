@@ -1,8 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import LoginPage from '../views/LoginPage.vue'
 import DashboardPage from '../views/DashboardPage.vue'
+import UploadPage from '../views/UploadPage.vue'
 import VerifyUploadPage from '../views/VerifyUploadPage.vue'
 import VerifyQRPage from '../views/VerifyQRPage.vue'
+import LandingPage from '../views/LandingPage.vue'
 
 const routes = [
   {
@@ -16,28 +18,34 @@ const routes = [
     meta: { requiresGuest: true }
   },
   {
+    path: '/landing',
+    name: 'Landing',
+    component: LandingPage,
+    meta: {requiresGuest: false }
+  },
+  {
     path: '/dashboard',
     name: 'Dashboard',
     component: DashboardPage,
-    meta: { requiresAuth: true }
+    meta: { requiresAuth: false }
   },
   {
     path: '/upload',
     name: 'Upload',
     component: UploadPage,
-    meta: { requiresAuth: true }
+    meta: { requiresAuth: false }
   },
   {
     path: '/verify-upload',
     name: 'VerifyUpload',
     component: VerifyUploadPage,
-    meta: { public: true }
+    meta: { public: false }
   },
   {
     path: '/verify-qr',
     name: 'VerifyQR',
     component: VerifyQRPage,
-    meta: { public: true }
+    meta: { public: false }
   },
   {
     path: '/:pathMatch(.*)*',
