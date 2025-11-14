@@ -57,7 +57,7 @@ import { useRouter } from 'vue-router'
 const props = defineProps({
   appName: {
     type: String,
-    default: 'BlokBlok Verify'
+    default: 'BlokBlok'
   },
   userName: {
     type: String,

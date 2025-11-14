@@ -9,5 +9,5 @@ import { useRouter } from 'vue-router'
 import VillainSection from '../components/VillainSection.vue'
 
 const router = useRouter()
-const goToCareer = () => router.push('/upload')
+const goToCareer = () => router.push('/verify-upload')
 </script>

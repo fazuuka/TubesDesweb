@@ -114,6 +114,9 @@
       </div>
 
       <!-- Footer -->
+      <p class="text-center text-sm text-gray-600 mt-6">
+        © 2025 BlokBlok. Powered by Blockchain.
+      </p>
     </div>
 
     <!-- Loading Overlay -->
@@ -187,26 +190,34 @@ const handleLogin = async () => {
   isLoading.value = true
   
   try {
-    const response = await fetch('/api/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        email: formData.email,
-        password: formData.password
-      })
-    })
+    // Import dummy users data
+    const usersData = await import('@/data/palalo.json')
+    const users = usersData.default.users || usersData.users
     
-    const data = await response.json()
+    // Find user with matching email and password
+    const user = users.find(
+      u => u.email === formData.email && u.password === formData.password
+    )
     
-    if (response.ok && data.token) {
-      localStorage.setItem('auth_token', data.token)
-      localStorage.setItem('user_data', JSON.stringify(data.user))
+    if (user) {
+      // Login success
+      const token = 'dummy-jwt-token-' + user.id + '-' + Date.now()
+      const userData = {
+        id: user.id,
+        name: user.name,
+        email: user.email,
+        role: user.role,
+        institution: user.institution
+      }
       
+      localStorage.setItem('auth_token', token)
+      localStorage.setItem('user_data', JSON.stringify(userData))
+      
+      // Redirect to dashboard
       router.push('/dashboard')
     } else {
-      errorMessage.value = data.message || 'Email atau password salah'
+      // Login failed
+      errorMessage.value = 'Email atau password salah'
       showError.value = true
     }
   } catch (error) {
