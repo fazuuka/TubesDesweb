@@ -1,5 +1,20 @@
 <template>
-  <div class="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 flex items-center justify-center p-4">
+  <div class="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 flex items-center justify-center p-4 relative">
+    <!-- Back Button -->
+    <button
+      @click="goBack" 
+      class="absolute top-6 left-6 flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm hover:bg-white text-gray-700 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 group"
+    >
+      <svg 
+        class="w-5 h-5 transition-transform group-hover:-translate-x-1" 
+        fill="none" 
+        stroke="currentColor" 
+        viewBox="0 0 24 24"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+      </svg>
+    </button>
+
     <div class="w-full max-w-md">
       <!-- Logo & Title -->
       <div class="text-center mb-8">
@@ -112,11 +127,6 @@
           </button>
         </form>
       </div>
-
-      <!-- Footer -->
-      <p class="text-center text-sm text-gray-600 mt-6">
-        © 2025 BlokBlok. Powered by Blockchain.
-      </p>
     </div>
 
     <!-- Loading Overlay -->
@@ -153,6 +163,12 @@ const errorMessage = ref('')
 const showError = ref(false)
 const isLoading = ref(false)
 const showPassword = ref(false)
+
+// Fungsi untuk kembali ke VerifyUploadPage
+const goBack = () => {
+  router.push({ name: 'VerifyUpload' })
+  // Atau jika menggunakan path: router.push('/verify-upload')
+}
 
 const validateForm = () => {
   let isValid = true

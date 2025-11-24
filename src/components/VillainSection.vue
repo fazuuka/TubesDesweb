@@ -1,5 +1,5 @@
 <template>
-  <section class="flex flex-col justify-center items-center text-center h-screen bg-gradient-to-b from-violet-400 to-cyan text-white">
+  <section class="flex flex-col justify-center items-center text-center w-screen h-screen bg-gradient-to-b from-blue-400 to-cyan text-white">
     <div class="animate-fadeIn">
       <h1 class="text-5xl font-bold mb-6">Pastikan Keaslian Dokumen Akademikmu</h1>
       <p class="text-lg mb-8 max-w-2xl mx-auto">

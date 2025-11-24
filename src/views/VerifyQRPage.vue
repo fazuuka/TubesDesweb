@@ -5,7 +5,7 @@
       <template #nav-links>
         <button
           @click="$router.push('/Landing')"
-          class="text-sm text-cyan-600 hover:text-cyan-900 mr-20"
+          class="text-sm text-cyan-600 hover:text-cyan-900 mr-10"
         >
       Home
         </button>
