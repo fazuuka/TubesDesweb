@@ -8,8 +8,3 @@
 console.log('App.vue loaded successfully')
 </script>
 
-<style>
-#app {
-  padding: 20px;
-}
-</style>
